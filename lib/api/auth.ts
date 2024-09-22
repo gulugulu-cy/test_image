@@ -28,9 +28,9 @@ export const login = async (
   t: UseTranslationReturnType,
   code?: string
 ): Promise<LoginResult> => {
-  // const hostname =  window.location.host.split('.')[0]
+  const hostname =  window.location.host.split('.')[0]
 
- const hostname = 'i0ha-word';
+//  const hostname = 'i0ha-word';
   const res = await authKy.get(
     `bot/v1/${hostname}${code ? `?pwd=${code}` : ''}`
   )

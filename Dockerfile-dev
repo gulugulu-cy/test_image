@@ -11,8 +11,9 @@ WORKDIR /app
 # 设置 Node.js 内存限制.npmmirror.com/ && \
 ENV NODE_OPTIONS="--max_old_space_size=4096"
 
-RUN npm install -g pnpm && \
-    pnpm config set registry https://registry.npmjs.org/ && \
+RUN npm config set registry https://registry.npmmirror.com && \ 
+    npm install -g pnpm && \
+    pnpm config set registry https://registry.npmjs.org && \
     pnpm install --frozen-lockfile
 
 COPY . .
